@@ -1,0 +1,42 @@
+[package]
+name = "withings_api"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "*"
+thiserror = "*"
+url = "*"
+tokio = { version = "*", features = ['full'] }
+futures = "*"
+reqwest = { version = "*", features = ["json"] }
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+serde_repr = "*"
+serde_urlencoded="*"
+strum = "*"
+strum_macros = "*"
+dotenv = {version = "*", optional = true}
+
+[dev-dependencies]
+pretty_assertions = "*"
+mockito = "*"
+assert_matches = "*"
+rstest = "*"
+
+[features]
+default = []
+env = ["dotenv"]
+
+[[example]]
+name = "getmeas"
+path = "examples/measure/getmeas.rs"
+required-features = ["env"]
+
+[[example]]
+name = "get_access_token"
+path = "examples/authorize/get_access_token.rs"
+required-features = ["env"]
