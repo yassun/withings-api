@@ -40,3 +40,8 @@ required-features = ["env"]
 name = "get_access_token"
 path = "examples/authorize/get_access_token.rs"
 required-features = ["env"]
+
+[[example]]
+name = "get_authorize_url"
+path = "examples/authorize/get_authorize_url.rs"
+required-features = ["env"]
